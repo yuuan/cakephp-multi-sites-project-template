@@ -43,6 +43,15 @@ Cache::config('default', array('engine' => 'File'));
  */
 
 /**
+ * Set the composer's autoload.
+ *
+ */
+require ROOT . DS . 'vendor' . DS . 'autoload.php';
+
+spl_autoload_unregister(array('App', 'load'));
+spl_autoload_register(array('App', 'load'), true, true);
+
+/**
  * Custom Inflector rules can be set to correctly pluralize or singularize table, model, controller names or whatever other
  * string is passed to the inflection functions
  *
