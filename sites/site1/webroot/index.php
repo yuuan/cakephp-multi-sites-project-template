@@ -27,7 +27,7 @@ if (!defined('DS')) {
  *
  */
 if (!defined('ROOT')) {
-	define('ROOT', dirname(dirname(dirname(__FILE__))));
+	define('ROOT', dirname(dirname(dirname(dirname(__FILE__)))));
 }
 
 /**
@@ -35,8 +35,21 @@ if (!defined('ROOT')) {
  *
  */
 if (!defined('APP_DIR')) {
-	define('APP_DIR', basename(dirname(dirname(__FILE__))));
+	define('APP_DIR', 'core');
 }
+
+/**
+ * The full path to the log directory.
+ *
+ */
+if (!defined('LOGS')) {
+	define('LOGS', dirname(dirname(__FILE__)) . DS . 'tmp' . DS . 'logs' . DS);
+}
+
+
+define('SITES', basename(dirname(dirname(dirname(__FILE__)))));
+define('SITE_NAME', basename(dirname(dirname(__FILE__))));
+
 
 /**
  * The absolute path to the "cake" directory, WITHOUT a trailing DS.
@@ -66,6 +79,7 @@ if (!defined('WWW_ROOT')) {
 	define('WWW_ROOT', dirname(__FILE__) . DS);
 }
 
+
 // for built-in server
 if (php_sapi_name() === 'cli-server') {
 	if ($_SERVER['REQUEST_URI'] !== '/' && file_exists(WWW_ROOT . $_SERVER['PHP_SELF'])) {
@@ -89,6 +103,7 @@ if (!defined('CAKE_CORE_INCLUDE_PATH')) {
 if (!empty($failed)) {
 	trigger_error("CakePHP core could not be found. Check the value of CAKE_CORE_INCLUDE_PATH in APP/webroot/index.php. It should point to the directory containing your " . DS . "cake core directory and your " . DS . "vendors root directory.", E_USER_ERROR);
 }
+
 
 App::uses('Dispatcher', 'Routing');
 

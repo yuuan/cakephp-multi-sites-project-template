@@ -28,7 +28,7 @@ if (!defined('DS')) {
  *
  */
 if (!defined('ROOT')) {
-	define('ROOT', dirname(dirname(dirname(__FILE__))));
+	define('ROOT', dirname(dirname(dirname(dirname(__FILE__)))));
 }
 
 /**
@@ -36,8 +36,21 @@ if (!defined('ROOT')) {
  *
  */
 if (!defined('APP_DIR')) {
-	define('APP_DIR', basename(dirname(dirname(__FILE__))));
+	define('APP_DIR', 'core');
 }
+
+/**
+ * The full path to the log directory.
+ *
+ */
+if (!defined('LOGS')) {
+	define('LOGS', dirname(dirname(__FILE__)) . DS . 'tmp' . DS . 'logs' . DS);
+}
+
+
+define('SITES', basename(dirname(dirname(dirname(__FILE__)))));
+define('SITE_NAME', basename(dirname(dirname(__FILE__))));
+
 
 /**
  * The absolute path to the "Cake" directory, WITHOUT a trailing DS.

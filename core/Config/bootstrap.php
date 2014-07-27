@@ -41,6 +41,11 @@ Cache::config('default', array('engine' => 'File'));
  * ));
  *
  */
+App::build(array(
+	'Controller' => array(ROOT . DS . SITES . DS . SITE_NAME . DS . 'Controller' . DS),
+	'View'       => array(ROOT . DS . SITES . DS . SITE_NAME . DS . 'View' . DS),
+	'Plugin'     => array(ROOT . DS . 'plugins' . DS),
+));
 
 /**
  * Set the composer's autoload.
