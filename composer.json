@@ -7,9 +7,16 @@
 		}
 	],
 	"require": {
-		"cakephp/cakephp": ">=2.5.1"
+		"cakephp/cakephp": ">=2.5.1",
+		"cakephp/debug_kit": "2.2.*",
+		"phpunit/phpunit": "3.7.*"
 	},
 	"config": {
 		"vendor-dir": "vendor/"
+	},
+	"extra": {
+		"installer-paths": {
+			"plugins/{$name}/": ["type:cakephp-plugin"]
+		}
 	}
 }
