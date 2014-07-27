@@ -33,7 +33,7 @@ if (function_exists('ini_set')) {
 	if (file_exists($composerInstall . DS . $dispatcher)) {
 		$install = $composerInstall;
 	} elseif (!file_exists($install . DS . $dispatcher)) {
-		$install = $root . PATH_SEPARATOR .  $ds . 'var' . $ds . 'www' . $ds . 'projects' . $ds . 'cakephp-multi-sites-project-template' . $ds . 'vendor' . $ds . 'cakephp' . $ds . 'cakephp' . $ds . 'lib';
+		$install = $root . PATH_SEPARATOR .  $root . $ds . 'vendor' . $ds . 'cakephp' . $ds . 'cakephp' . $ds . 'lib';
 	}
 
 	ini_set('include_path', $install . PATH_SEPARATOR . ini_get('include_path'));
