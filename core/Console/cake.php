@@ -20,6 +20,9 @@ if (!defined('DS')) {
 	define('DS', DIRECTORY_SEPARATOR);
 }
 
+define('SITES', '');
+define('SITE_NAME', 'core');
+
 $dispatcher = 'Cake' . DS . 'Console' . DS . 'ShellDispatcher.php';
 
 if (function_exists('ini_set')) {
@@ -33,7 +36,7 @@ if (function_exists('ini_set')) {
 	if (file_exists($composerInstall . DS . $dispatcher)) {
 		$install = $composerInstall;
 	} elseif (!file_exists($install . DS . $dispatcher)) {
-		$install = $root . PATH_SEPARATOR .  $root . $ds . 'vendor' . $ds . 'cakephp' . $ds . 'cakephp' . $ds . 'lib';
+		$install = $root . PATH_SEPARATOR .  $root . DS . 'vendor' . DS . 'cakephp' . DS . 'cakephp' . DS . 'lib';
 	}
 
 	ini_set('include_path', $install . PATH_SEPARATOR . ini_get('include_path'));
